@@ -8,6 +8,15 @@
                    <version>1.0-SNAPSHOT</version>
                </dependency>
                
+*  配置文件
+   ````
+   pps:
+     netty:
+       im:
+         enable : true
+         port: 9090
+         websocketPath: /pps
+    ````
 *  自定义两个类（必须）
      * webscoket连接权限自定义实现 并加入容器 这个类能决定客户端传入的连接请求能否被允许 客户端可以在连接url后面添加参数 在方法的map里会封装这些参数  
      例如：
@@ -125,7 +134,7 @@
    
        }
    ````
-*    可选的http 继承HttpService 并加入容器（LoginImService也是继承了httpService）  例如
+*    可选的http服务  继承HttpService 并加入容器（LoginImService也是继承了httpService）  例如
        ````
      @Component
      public class MyLoginServiseImpl extends LoginImService {
@@ -146,5 +155,6 @@
          }
      }
      ````
+     
       
     
